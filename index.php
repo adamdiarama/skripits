@@ -1,3 +1,4 @@
+<?php require "function/f_index.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
