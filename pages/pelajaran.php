@@ -1,33 +1,36 @@
 <?php require "../session.php"; ?>
+<?php require "../function/f_pelajaran.php"; ?>
+<?php 
+	if(isset($_GET['mapel'])) {
+		addKontrak_Mapel($connect, $_GET['mapel'], $_GET['siswa']);
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ITS</title>
-  <?php include "header.php"; ?>
+	<title>Pelajaran</title>
+	<?php require "header.php" ?>
 </head>
-
 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-	<?php include "navbar-top.php"; ?>
+	<?php require "navbar-top.php"; ?>
 
-	<?php include "sidebar.php"; ?>
+	<?php require "sidebar.php"; ?>
 
 	<!-- Content Wrapper. Contains page content -->
 	  <div class="content-wrapper">
 	    <!-- Content Header (Page header) -->
 	    <section class="content-header">
 	      <h1>
-	        Dashboard
-	        <small>Control panel</small>
+	        Pelajaran
 	      </h1>
 	      <ol class="breadcrumb">
-	        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	        <li class="active">Dashboard</li>
+	        <li class="active">Pelajaran</li>
 	      </ol>
 	    </section>
 
-		<?php include "../content/cindex.php"; ?>
+		<?php require "../content/cpelajaran.php"; ?>
 	  </div>
 
 </div>

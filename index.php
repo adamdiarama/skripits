@@ -1,4 +1,3 @@
-<?php require "function/f_index.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,6 +69,19 @@
 
 <!-- Login Container -->
 <div class="container">    
+
+
+        <!-- Error Login -->
+        <?php 
+            if(isset($_GET['err'])) {
+                echo "<div id='errLogin' style='margin-top:50px;' class='col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2'>
+                        <div class='alert alert-danger' style='margin-bottom:-50px; width:540px; margin-top:50px;'>Username atau Password yang anda masukkan salah</div>
+                      </div>";
+            }
+        ?>
+        <!-- Div Error Login -->
+        
+
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
@@ -81,7 +93,7 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form">
+                        <form id="loginform" class="form-horizontal" role="form" method="POST" action="function/f_index.php">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -108,9 +120,7 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
+                                      <input id="btn-login" class="btn btn-success" type="submit" name="Login">
                                     </div>
                                 </div>
 

@@ -1,4 +1,3 @@
-
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -16,7 +15,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $_SESSION['username']; ?></span>
             </a>
             
           <li>
