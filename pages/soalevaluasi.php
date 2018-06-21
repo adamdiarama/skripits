@@ -1,17 +1,22 @@
 <?php require "../session.php"; ?>
-<?php require "../function/f_materi.php" ?>
-<?php 
+<?php require "../function/f_soalevaluasi.php" ?>
+
+<?php  
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
+	}
+
+	if(isset($_GET['mulai'])) {
+		$mulai = $_GET['mulai'];
 	} else {
-		$id = 0;
+		$mulai = 0;
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Materi</title>
+	<title>Soal</title>
 	<?php require "header.php" ?>
 </head>
 
@@ -26,14 +31,14 @@
 	    <!-- Content Header (Page header) -->
 	    <section class="content-header">
 	      <h1>
-	        Materi
+	        <?php activeEvaluasi($id, $connect); ?>
 	      </h1>
 	      <ol class="breadcrumb">
-	        <li class="active">Materi</li>
+	        <li class="active"><?php activeEvaluasi($id, $connect); ?></li>
 	      </ol>
 	    </section>
 
-		<?php require "../content/cmateri.php"; ?>
+		<?php require "../content/csoalevaluasi.php"; ?>
 	  </div>
 
 </div>

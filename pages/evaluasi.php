@@ -1,17 +1,23 @@
 <?php require "../session.php"; ?>
-<?php require "../function/f_materi.php" ?>
-<?php 
-	if(isset($_GET['id'])) {
-		$id = $_GET['id'];
+<?php require "../function/f_evaluasi.php" ?>
+<?php  
+	if(isset($_GET['pel'])) {
+		$id_mapel = $_GET['pel'];
 	} else {
-		$id = 0;
+		$id_mapel = 0;
+	}
+
+	if(isset($_GET['mat'])) {
+		$id_materi = $_GET['mat'];
+	} else {
+		$id_materi = 0;
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Materi</title>
+	<title>Evaluasi</title>
 	<?php require "header.php" ?>
 </head>
 
@@ -26,14 +32,14 @@
 	    <!-- Content Header (Page header) -->
 	    <section class="content-header">
 	      <h1>
-	        Materi
+	        Evaluasi
 	      </h1>
 	      <ol class="breadcrumb">
-	        <li class="active">Materi</li>
+	        <li class="active">Evaluasi</li>
 	      </ol>
 	    </section>
 
-		<?php require "../content/cmateri.php"; ?>
+		<?php require "../content/cevaluasi.php"; ?>
 	  </div>
 
 </div>

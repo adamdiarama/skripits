@@ -29,13 +29,13 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="latihan.php">
             <i class="fa fa-laptop"></i>
             <span>Latihan</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="evaluasi.php">
             <i class="fa fa-edit"></i> <span>Evaluasi</span>
           </a>
         </li>
