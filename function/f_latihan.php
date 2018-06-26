@@ -23,13 +23,28 @@
 			echo "<tr>";
 			echo "<td>".$i."</td>";
 			echo "<td>" .$data_latihan['judul']. "</td>";
-			echo "<td><a class='btn btn-app' href='soallatihan.php?id=".$data_latihan['id']."'><i class='fa fa-play'></i> Mulai</a></td>";
+			echo "<td><a class='btn btn-app' href='soallatihan.php?id=".$data_latihan['id']."&L=1&V=1'><i class='fa fa-play'></i> Mulai</a></td>";
 			echo "</tr>";
 			$i++;
 		}
 
 		echo "</tbody>
 		</table>";
+	}
+
+
+	function cekNilaiSiswa($connect, $id_mapel, $id_materi) {
+		$id_siswa = $_SESSION['id'];
+
+		$query = "select * from nilai_siswa where id_siswa=$id_siswa";
+		$hasil = mysqli_query($connect, $query);
+		$data = mysqli_fetch_array($hasil);
+
+		if(is_null($data)) {
+			$query = "insert into nilai_siswa (id, id_siswa, id_mapel, id_materi) values (null, $id_siswa, $id_mapel, $id_materi)";
+			$hasil = mysqli_query($connect, $query);
+			var_dump($hasil);
+		}
 	}
 
 ?>

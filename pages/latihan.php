@@ -9,9 +9,15 @@
 
 	if(isset($_GET['mat'])) {
 		$id_materi = $_GET['mat'];
+		cekNilaiSiswa($connect, $id_mapel, $id_materi);
 	} else {
 		$id_materi = 0;
 	}
+
+	$_SESSION['jumlahcoba1'] = 0;
+	$_SESSION['jumlahcoba2'] = 0;
+	$_SESSION['jumlahcoba3'] = 0;
+
 ?>
 
 <!DOCTYPE html>

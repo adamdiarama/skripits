@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 12:45 AM
+-- Generation Time: Jun 26, 2018 at 08:46 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `nilai_siswa` (
   `ket_latihan3` varchar(10) NOT NULL,
   `hasil_evaluasi` int(11) NOT NULL,
   `ket_hasil_evaluasi` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nilai_siswa`
@@ -252,7 +252,8 @@ INSERT INTO `nilai_siswa` (`id`, `id_siswa`, `id_mapel`, `id_materi`, `latihan1_
 (97, 2, 1, 1, 8, 0, 0, 'kurang', 2, 0, 0, 'baik', 7, 0, 0, 'kurang', 85, 'baik'),
 (98, 2, 1, 1, 2, 0, 0, 'baik', 6, 0, 0, 'cukup', 10, 0, 0, 'kurang', 18, 'kurang'),
 (99, 2, 1, 1, 4, 0, 0, 'cukup', 6, 0, 0, 'cukup', 7, 0, 0, 'kurang', 8, 'kurang'),
-(100, 2, 1, 1, 10, 0, 0, 'kurang', 7, 0, 0, 'kurang', 7, 0, 0, 'kurang', 36, 'cukup');
+(100, 2, 1, 1, 10, 0, 0, 'kurang', 7, 0, 0, 'kurang', 7, 0, 0, 'kurang', 36, 'cukup'),
+(102, 3, 1, 1, 4, 1, 0, 'baik', 0, 0, 0, '', 0, 0, 0, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -288,6 +289,42 @@ INSERT INTO `soalevaluasi` (`id`, `id_evaluasi`, `no_soal`, `pertanyaan`, `opsi_
 (8, 1, 8, 'Soal No 8', 'Salah', 'Salah', 'Salah', 'Benar', 'Salah', 'Benar'),
 (9, 1, 9, 'Soal No 9', 'Salah', 'Salah', 'Salah', 'Salah', 'Benar', 'Benar'),
 (10, 1, 10, 'Soal No 10', 'Salah', 'Salah', 'Salah', 'Salah', 'Benar', 'Benar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `soallatihan`
+--
+
+CREATE TABLE IF NOT EXISTS `soallatihan` (
+`id` int(11) NOT NULL,
+  `id_latihan` int(11) NOT NULL,
+  `no_latihan` int(11) NOT NULL,
+  `variasi` int(11) NOT NULL,
+  `soal` text NOT NULL,
+  `input1` text NOT NULL,
+  `input2` text NOT NULL,
+  `input3` text NOT NULL,
+  `output1` text NOT NULL,
+  `output2` text NOT NULL,
+  `output3` text NOT NULL,
+  `base_code` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `soallatihan`
+--
+
+INSERT INTO `soallatihan` (`id`, `id_latihan`, `no_latihan`, `variasi`, `soal`, `input1`, `input2`, `input3`, `output1`, `output2`, `output3`, `base_code`) VALUES
+(1, 1, 1, 1, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif.<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(2, 1, 1, 2, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 2<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(3, 1, 1, 3, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 3<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(4, 1, 2, 1, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 21<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(5, 1, 2, 2, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 22<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(6, 1, 2, 3, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 23<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(7, 1, 3, 1, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 31<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(8, 1, 3, 2, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 32<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n'),
+(9, 1, 3, 3, 'Buatlah program untuk menentukan apakah suatu bilangan bernilai positif atau negatif. 33<br/>\r\n\r\nCatatan :\r\ninput dimasukkan dalam variabel a\r\n<br/><br/>\r\n\r\nOutput yang harus dihasilkan, contoh:<br/>\r\ninput : 5<br/>\r\noutput : "positif"<br/>\r\n\r\ninput : -4<br/>\r\noutput : "negatif"', 'a := 5;', 'a := -3;', 'a := 1;', 'positif', 'negatif', 'positif', 'program Latihan;\r\nvar\r\n   a : integer;\r\nbegin\r\n   input();\r\n\r\n\r\nend.\r\n');
 
 -- --------------------------------------------------------
 
@@ -357,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `t_its_lat2` (
 --
 
 INSERT INTO `t_its_lat2` (`id`, `latihan1`, `lat2_baik`, `lat2_cukup`, `lat2_kurang`) VALUES
-(1, 'baik', 0.35, 0.4, 0.25),
+(1, 'baik', 0.5, 0.3, 0.2),
 (2, 'cukup', 0.2, 0.4, 0.4),
 (3, 'kurang', 0.422222, 0.244444, 0.333333);
 
@@ -459,6 +496,12 @@ ALTER TABLE `soalevaluasi`
  ADD PRIMARY KEY (`id`), ADD KEY `id_evaluasi` (`id_evaluasi`);
 
 --
+-- Indexes for table `soallatihan`
+--
+ALTER TABLE `soallatihan`
+ ADD PRIMARY KEY (`id`), ADD KEY `id_latihan` (`id_latihan`);
+
+--
 -- Indexes for table `t_its_hasil`
 --
 ALTER TABLE `t_its_hasil`
@@ -515,12 +558,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `nilai_siswa`
 --
 ALTER TABLE `nilai_siswa`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=103;
 --
 -- AUTO_INCREMENT for table `soalevaluasi`
 --
 ALTER TABLE `soalevaluasi`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `soallatihan`
+--
+ALTER TABLE `soallatihan`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `t_its_hasil`
 --
@@ -585,6 +633,12 @@ ADD CONSTRAINT `nilai_siswa_ibfk_3` FOREIGN KEY (`id_materi`) REFERENCES `materi
 --
 ALTER TABLE `soalevaluasi`
 ADD CONSTRAINT `soalevaluasi_ibfk_1` FOREIGN KEY (`id_evaluasi`) REFERENCES `evaluasi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `soallatihan`
+--
+ALTER TABLE `soallatihan`
+ADD CONSTRAINT `soallatihan_ibfk_1` FOREIGN KEY (`id_latihan`) REFERENCES `latihan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
