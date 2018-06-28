@@ -1,25 +1,18 @@
 <?php require "../session.php"; ?>
-<?php require "../function/f_latihan.php" ?>
+<?php require "../function/f_admin_latihan.php" ?>
+
 <?php  
 	if(isset($_GET['pel'])) {
 		$id_mapel = $_GET['pel'];
-		$_SESSION['idmapel'] = $id_mapel;
 	} else {
 		$id_mapel = 0;
 	}
 
 	if(isset($_GET['mat'])) {
 		$id_materi = $_GET['mat'];
-		$_SESSION['id_materi'] = $id_materi;
-		cekNilaiSiswa($connect, $id_mapel, $id_materi);
 	} else {
 		$id_materi = 0;
 	}
-
-	$_SESSION['jumlahcoba1'] = 0;
-	$_SESSION['jumlahcoba2'] = 0;
-	$_SESSION['jumlahcoba3'] = 0;
-
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +26,7 @@
 <div class="wrapper">
 	<?php require "navbar-top.php"; ?>
 
-	<?php require "sidebar.php"; ?>
+	<?php require "admin_sidebar.php"; ?>
 
 	<!-- Content Wrapper. Contains page content -->
 	  <div class="content-wrapper">
@@ -47,7 +40,7 @@
 	      </ol>
 	    </section>
 
-		<?php require "../content/clatihan.php"; ?>
+		<?php require "../content/cadminlatihan.php"; ?>
 	  </div>
 
 </div>

@@ -43,19 +43,21 @@
 
 		$jumlah = $_SESSION['jumlahcoba'.$no_latihan];
 		$id_siswa = $_SESSION['id'];
+		$id_mapel = $_SESSION['idmapel'];
+		$id_materi = $_SESSION['idmateri'];
 
 		$kategori1 = ambilKategori($_SESSION['jumlahcoba1']);
 		$kategori2 = ambilKategori($_SESSION['jumlahcoba2']);
 		$kategori3 = ambilKategori($_SESSION['jumlahcoba3']);
 		
-		$query = "update nilai_siswa set latihan".$no_latihan."_v".$variasi."=$jumlah where id_siswa=$id_siswa";
+		$query = "update nilai_siswa set latihan".$no_latihan."_v".$variasi."=$jumlah where id_siswa=$id_siswa and id_mapel=$id_mapel and id_materi=$id_materi";
 		$hasil = mysqli_query($connect, $query);
 		
 
 		if($jumlahBenar == 3) {
 
 			if($no_latihan == 1) {
-				$query = "update nilai_siswa set ket_latihan1='$kategori1' where id_siswa=$id_siswa";
+				$query = "update nilai_siswa set ket_latihan1='$kategori1' where id_siswa=$id_siswa and id_mapel=$id_mapel and id_materi=$id_materi";
 				$hasil = mysqli_query($connect, $query);
 
 				$query = "select * from t_its_lat2 where latihan1='$kategori1'";
@@ -78,7 +80,7 @@
 					}
 				}
 			} else if($no_latihan == 2) {
-				$query = "update nilai_siswa set ket_latihan2='$kategori2' where id_siswa=$id_siswa";
+				$query = "update nilai_siswa set ket_latihan2='$kategori2' where id_siswa=$id_siswa and id_mapel=$id_mapel and id_materi=$id_materi";
 				$hasil = mysqli_query($connect, $query);
 
 
@@ -102,7 +104,7 @@
 					}
 				}
 			} else if($no_latihan == 3) {
-				$query = "update nilai_siswa set ket_latihan3='$kategori3' where id_siswa=$id_siswa";
+				$query = "update nilai_siswa set ket_latihan3='$kategori3' where id_siswa=$id_siswa and id_mapel=$id_mapel and id_materi=$id_materi";
 				$hasil = mysqli_query($connect, $query);
 
 

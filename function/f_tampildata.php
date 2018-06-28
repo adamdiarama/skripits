@@ -5,7 +5,13 @@
 
 		$i = 1;
 
-		$query_mapel = "select a.nama_mapel, a.id from mata_pelajaran a, kontrak_mapel b where b.id_siswa=$id_siswa and a.id=b.id_mapel";
+		if($id_siswa != 2) {
+			$query_mapel = "select a.nama_mapel, a.id from mata_pelajaran a, kontrak_mapel b where b.id_siswa=$id_siswa and a.id=b.id_mapel";	
+		} else {
+			$query_mapel = "select * from mata_pelajaran";	
+		}
+
+		
 		$hasil_mapel = mysqli_query($connect, $query_mapel);
 
 		while($data_mapel = mysqli_fetch_array($hasil_mapel)) {
@@ -39,7 +45,13 @@
 
 		$i = 1;
 
-		$query_materi = "select a.id, a.judul_materi from materi a, kontrak_mapel b, mata_pelajaran c where a.id_mapel=c.id and b.id_mapel=c.id and b.id_siswa=$id_siswa and c.id=$id_mapel";
+		if($id_siswa != 2) {
+			$query_materi = "select a.id, a.judul_materi from materi a, kontrak_mapel b, mata_pelajaran c where a.id_mapel=c.id and b.id_mapel=c.id and b.id_siswa=$id_siswa and c.id=$id_mapel";
+		} else {
+			$query_materi = "select * from materi where id_mapel='$id_mapel'";	
+		}
+
+		
 		$hasil_materi = mysqli_query($connect, $query_materi);
 
 		while($data_materi = mysqli_fetch_array($hasil_materi)) {

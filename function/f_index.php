@@ -16,7 +16,7 @@ if(isset($_POST['Login'])) {
 function fungsiLogin($username, $password, $connect) {
 
 
-	$query = "select * from user where username='$username' and password=md5('$password')";
+	$query = "select * from user where username='$username' and password='$password'";
 	$hasil = mysqli_query($connect, $query);
 	$data = mysqli_fetch_array($hasil);
 
@@ -26,7 +26,7 @@ function fungsiLogin($username, $password, $connect) {
 		$_SESSION['level'] = $data['level'];
 
 		if($data['level'] == 1) {
-			header("location:admin_dashboard.php");
+			header("location:../pages/admin_dashboard.php");
 		} else if($data['level'] == 2) {
 			header("location:../pages/dashboard.php");
 		}
