@@ -58,9 +58,11 @@
 
 
 		while($data_soal = mysqli_fetch_array($hasil_soal)) {
+                     echo "<div style='width:900px; height:auto; background-color:white; margin-left:50px;'>";
+
 			echo "<table style='margin-top:30px;'>
        		<tr>
-       			<td style='padding-right:20px;'>".$data_soal['no_soal']."</td>
+       			<td style='padding-right:20px;'>".$data_soal['no_soal'].")</td>
        			<td style='padding-right:20px;'>".$data_soal['pertanyaan']."</td>
        		</tr>
 
@@ -89,6 +91,8 @@
        			<td><input type='radio' name='opt".$data_soal['no_soal']."' value='".$data_soal['opsi_e']."'> ".$data_soal['opsi_e']."</td>
        		</tr>
        	</table>";
+
+              echo "</div>";
 		}
 
 		echo "<input type='submit' class='btn btn-block btn-success' name='submit' value='submit' style='width:70px; margin-top:50px;' />";

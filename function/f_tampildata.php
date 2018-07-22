@@ -36,12 +36,12 @@
 
 	function showMateri($id_siswa, $id_mapel, $connect, $id_materi) {
 
-		echo "<div class='container' style='margin-top:30px; margin-left:30px;'>                                       
-		  <div class='dropdown'>
-		    <button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>"; activeMateri($id_materi, $connect);
+		// echo "<div class='container' style='margin-top:30px; margin-left:30px;'>                                       
+		//   <div class='dropdown'>
+		//     <button class='btn btn-default dropdown-toggle' type='button' id='menu1' data-toggle='dropdown'>"; activeMateri($id_materi, $connect);
 
-		echo "<span class='caret'></span></button>
-		    <ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>";
+		// echo "<span class='caret'></span></button>
+		//     <ul class='dropdown-menu' role='menu' aria-labelledby='menu1'>";
 
 		$i = 1;
 
@@ -59,9 +59,9 @@
 			$i++;
 		}
 
-		echo "</ul>
-		  </div>
-		</div>    ";
+		// echo "</ul>
+		//   </div>
+		// </div>    ";
 	}
 
 	function activeMateri($id_materi, $connect) {

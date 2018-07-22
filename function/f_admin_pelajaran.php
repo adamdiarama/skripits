@@ -10,7 +10,7 @@
 			echo "<tr>";
 			echo "<td style='padding-left:10px;'>".$i."</td>";
 			echo "<td style='padding-left:10px;'>".$data['nama_mapel']."</td>";
-			echo "<td style='padding-left:10px;'><a href='admin_tambah_pelajaran.php?id=".$data['id']."'><i class='fa fa-fw fa-file-o'></i></a> <a href='admin_tambah_pelajaran.php?id=".$data['id']."&del=1'><i class='fa fa-fw fa-trash'></i></a></td>";
+			echo "<td style='padding-left:10px;'><a href='admin_tambah_pelajaran.php?id=".$data['id']."' title='edit'><i class='fa fa-fw fa-file-o'></i></a> <a href='admin_tambah_pelajaran.php?id=".$data['id']."&del=1' title='hapus'><i class='fa fa-fw fa-trash'></i></a></td>";
 			echo "</tr>";
     					
     				

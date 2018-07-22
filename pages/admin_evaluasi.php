@@ -1,31 +1,24 @@
 <?php require "../session.php"; ?>
-<?php require "../function/f_latihan.php" ?>
+<?php require "../function/f_admin_evaluasi.php"; ?>
+
 <?php  
 	if(isset($_GET['pel'])) {
 		$id_mapel = $_GET['pel'];
-		$_SESSION['idmapel'] = $id_mapel;
 	} else {
 		$id_mapel = 0;
 	}
 
 	if(isset($_GET['mat'])) {
 		$id_materi = $_GET['mat'];
-		$_SESSION['idmateri'] = $id_materi;
-		cekNilaiSiswa($connect, $id_mapel, $id_materi);
 	} else {
 		$id_materi = 0;
 	}
-
-	$_SESSION['jumlahcoba1'] = 0;
-	$_SESSION['jumlahcoba2'] = 0;
-	$_SESSION['jumlahcoba3'] = 0;
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Latihan</title>
+	<title>Evaluasi</title>
 	<?php require "header.php" ?>
 </head>
 
@@ -33,21 +26,21 @@
 <div class="wrapper">
 	<?php require "navbar-top.php"; ?>
 
-	<?php require "sidebar.php"; ?>
+	<?php require "admin_sidebar.php"; ?>
 
 	<!-- Content Wrapper. Contains page content -->
 	  <div class="content-wrapper">
 	    <!-- Content Header (Page header) -->
 	    <section class="content-header">
 	      <h1>
-	        Latihan
+	        Evaluasi
 	      </h1>
 	      <ol class="breadcrumb">
-	        <li class="active">Latihan</li>
+	        <li class="active">Evaluasi</li>
 	      </ol>
 	    </section>
 
-		<?php require "../content/clatihan.php"; ?>
+		<?php require "../content/cadminevaluasi.php"; ?>
 	  </div>
 
 </div>

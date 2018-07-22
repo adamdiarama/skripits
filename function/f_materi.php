@@ -30,18 +30,18 @@
 
 
 	function showMateri($id_mapel, $connect) {
-		echo "<div style='margin-top:50px; margin-left:50px;''>
-			<table border='1' style='width: 700px;''>
-				<thead>
-					<tr>
-						<td>NO</td>
-						<td>Materi</td>
-						<td>Download</td>
-					</tr>
-				</thead>
+		// echo "<div style='margin-top:50px; margin-left:50px;''>
+		// 	<table border='1' style='width: 700px;''>
+		// 		<thead>
+		// 			<tr>
+		// 				<td>NO</td>
+		// 				<td>Materi</td>
+		// 				<td>Download</td>
+		// 			</tr>
+		// 		</thead>
 
-				<tbody>
-					<tr>";
+		// 		<tbody>
+		// 			<tr>";
 
 		$i = 1;
 		$query_materi = "select * from materi where id_mapel=$id_mapel";

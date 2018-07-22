@@ -6,11 +6,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel" style="height:80px;">
         <div class="pull-left info">
-          <p><?php echo $_SESSION['username']; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <img src="../dist/img/userimage.png" class="img-circle" alt="User Image" style="width:50px; margin-left:-50px;">
+          <p style="margin-top:-40px; margin-left:20px;"><?php echo $_SESSION['username']; ?></p>
+          <p style="margin-left:20px;"><small><a href="#"><i class="fa fa-circle text-success"></i> Online</a></small></p>
         </div>
       </div>
-
 
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -23,7 +23,7 @@
         </li>
         <li><a href="pelajaran.php" class="treeview"><i class="fa fa-book"></i> <span>Pelajaran</span></a></li>
         <li class="treeview">
-          <a href="materi.php">
+          <a href="materi.php?id=1">
             <i class="fa fa-files-o"></i>
             <span>Materi</span>
           </a>
@@ -53,8 +53,9 @@
   </aside>
 
 <script type="text/javascript">
+
 $(document).ready(function(){
-    $('.nav li').click(function(event){
+    $('.sidebar-menu li').click(function(event){
         //remove all pre-existing active classes
         $('.active').removeClass('active');
 
@@ -64,7 +65,7 @@ $(document).ready(function(){
         //Load the content
         //e.g.
         //load the page that the link was pointing to
-        //$('#content').load($(this).find(a).attr('href'));      
+        $('#content').load($(this).find(a).attr('href'));      
 
         event.preventDefault();
     });

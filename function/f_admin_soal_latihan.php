@@ -11,7 +11,7 @@
 			echo "<tr>";
 			echo "<td>".$i."</td>";
 			echo "<td>".$data['soal']."</td>";
-			echo "<td><a href='admin_tambah_soal_latihan.php?id=".$data['id']."'><i class='fa fa-fw fa-file-o'></i></a> <a href='admin_tambah_soal_latihan.php?id=".$data['id']."&del=1'><i class='fa fa-fw fa-trash'></i></a></td>";
+			echo "<td><a href='admin_tambah_soal_latihan.php?id=".$data['id']."' title='edit'><i class='fa fa-fw fa-file-o'></i></a> <a href='admin_tambah_soal_latihan.php?id=".$data['id']."&del=1' title='hapus'><i class='fa fa-fw fa-trash'></i></a></td>";
 			echo "</tr>";
 
 			$i++;

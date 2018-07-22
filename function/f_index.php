@@ -12,6 +12,21 @@ if(isset($_POST['Login'])) {
 	fungsiLogin($username, $password, $connect);
 }
 
+//check for signup submit button
+if(isset($_POST['signup'])) {
+	$username = $_POST['username'];
+	$nama_lengkap = $_POST[nama_lengkap];
+	$kelas = $_POST['kelas'];
+	$password = $_POST['password'];
+
+	fungsiSignUp($username, $nama_lengkap, $kelas, $password, $connect);
+}
+
+//check for signout
+if(isset($_GET['out'])) {
+	fungsiSignOut();
+}
+
 // Login Function
 function fungsiLogin($username, $password, $connect) {
 
@@ -22,6 +37,8 @@ function fungsiLogin($username, $password, $connect) {
 
 	if(!is_null($data)) {
 		$_SESSION['username'] = $data['username'];
+		$_SESSION['nama_lengkap'] = $data['nama_lengkap'];
+		$_SESSION['kelas'] = $data['kelas'];
 		$_SESSION['id'] = $data['id'];
 		$_SESSION['level'] = $data['level'];
 
@@ -34,6 +51,24 @@ function fungsiLogin($username, $password, $connect) {
 		header("location:../index.php?err=1");
 	}
 
+}
+
+
+// Signup Function
+function fungsiSignUp($username, $nama_lengkap, $kelas, $password, $connect) {
+
+	$query = "insert into user values(null, '$username', '$password', '$nama_lengkap', '$kelas', 2)";
+	$hasil = mysqli_query($connect, $query);
+	$data = mysqli_fetch_array($hasil);
+
+	header('location:../index.php');
+}
+
+// Signout Function
+function fungsiSignOut() {
+	session_unset();
+	session_destroy();
+	header('location:../index.php');
 }
 
  ?>

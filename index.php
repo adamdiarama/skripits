@@ -86,7 +86,7 @@
             <div class="panel panel-info" >
                     <div class="panel-heading">
                         <div class="panel-title">Sign In</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                        <!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
@@ -110,7 +110,7 @@
                             <div class="input-group">
                                       <div class="checkbox">
                                         <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                          <!-- <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me -->
                                         </label>
                                       </div>
                                     </div>
@@ -150,63 +150,65 @@
                             <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
                         </div>  
                         <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form">
+                            <form id="signupform" class="form-horizontal" role="form" method="POST" action="function/f_index.php">
                                 
                                 <div id="signupalert" style="display:none" class="alert alert-danger">
                                     <p>Error:</p>
                                     <span></span>
                                 </div>
-                                    
-                                
                                   
                                 <div class="form-group">
-                                    <label for="email" class="col-md-3 control-label">Email</label>
+                                    <label for="email" class="col-md-3 control-label">Username</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                        <input type="text" class="form-control" name="username" placeholder="Username" required>
                                     </div>
                                 </div>
                                     
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                    <label for="firstname" class="col-md-3 control-label">Nama Lengkap</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                        <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                    <label for="lastname" class="col-md-3 control-label">Kelas</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                        <!-- <input type="text" class="form-control" name="lastname" placeholder="Last Name"> -->
+                                        <select class="form-control" name="kelas">
+                                        	<option value="X A">X A</option>
+                                        	<option value="X B">X B</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-md-3 control-label">Password</label>
                                     <div class="col-md-9">
-                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                                     </div>
                                 </div>
                                     
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="icode" class="col-md-3 control-label">Invitation Code</label>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" name="icode" placeholder="">
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                        <span style="margin-left:8px;">or</span>  
+                                        <button id="btn-signup" type="submit" class="btn btn-info" name="signup"><i class="icon-hand-right"></i>Sign Up</button>
+                                        <!-- <span style="margin-left:8px;">or</span>   -->
                                     </div>
                                 </div>
                                 
-                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                                <!-- <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
                                     
                                     <div class="col-md-offset-3 col-md-9">
                                         <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
                                     </div>                                           
                                         
-                                </div>
+                                </div> -->
                                 
                                 
                                 

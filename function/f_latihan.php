@@ -4,16 +4,16 @@
 
 
 	function showLatihan($id_materi, $connect) {
-		echo "<table style='width:500px; margin-top:30px; margin-left:70px;' border='1'>
-			<thead>
-				<tr>
-					<td>No</td>
-					<td>Latihan</td>
-					<td></td>
-				</tr>
-			</thead>
+		// echo "<table style='width:500px; margin-top:30px; margin-left:70px;' border='1'>
+		// 	<thead>
+		// 		<tr>
+		// 			<td>No</td>
+		// 			<td>Latihan</td>
+		// 			<td></td>
+		// 		</tr>
+		// 	</thead>
 
-			<tbody>";
+		// 	<tbody>";
 
 		$i = 1;
 		$query_latihan = "select * from latihan where id_materi=$id_materi";
@@ -21,15 +21,15 @@
 
 		while($data_latihan = mysqli_fetch_array($hasil_latihan)) {
 			echo "<tr>";
-			echo "<td>".$i."</td>";
-			echo "<td>" .$data_latihan['judul']. "</td>";
-			echo "<td><a class='btn btn-app' href='soallatihan.php?id=".$data_latihan['id']."&L=1&V=1'><i class='fa fa-play'></i> Mulai</a></td>";
+			echo "<td style='padding-top:25px;'>".$i."</td>";
+			echo "<td style='padding-top:25px;'>" .$data_latihan['judul']. "</td>";
+			echo "<td style='text-align:right;'><a class='btn btn-app' style='background-color:#5cb85c;' href='soallatihan.php?id=".$data_latihan['id']."&L=1&V=1'><i class='fa fa-play' style='color:white; padding-top:5px;'></i> <p style='color:white;'>Mulai</p></a></td>";
 			echo "</tr>";
 			$i++;
 		}
 
-		echo "</tbody>
-		</table>";
+		// echo "</tbody>
+		// </table>";
 	}
 
 

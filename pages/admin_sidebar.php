@@ -6,8 +6,9 @@
       <!-- Sidebar user panel -->
       <div class="user-panel" style="height:80px;">
         <div class="pull-left info">
-          <p><?php echo $_SESSION['username']; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image" style="width:50px; margin-left:-50px;">
+          <p style="margin-top:-40px; margin-left:20px;"><?php echo $_SESSION['username']; ?></p>
+          <p style="margin-left:20px;"><small><a href="#"><i class="fa fa-circle text-success"></i> Online</a></small></p>
         </div>
       </div>
 

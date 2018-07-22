@@ -17,13 +17,13 @@
 
 			$kode =  str_replace("input();", $dataquery['input'.$i], $data['kodearea']);
 
-			$myfile = fopen(getenv("HOMEDRIVE") . getenv("HOMEPATH"). "\\Documents\\main.pas", "w");
+			$myfile = fopen(getenv("HOMEDRIVE") . getenv("HOMEPATH"). "\\Documents\\".$_SESSION['id']."main.pas", "w");
 			$txt = $kode;
 			fwrite($myfile, $txt);
 			fclose($myfile);
 
 
-			$output = shell_exec("fpc " .getenv("HOMEDRIVE") . getenv("HOMEPATH"). "\\Documents\\main.pas");
+			$output = shell_exec("fpc " .getenv("HOMEDRIVE") . getenv("HOMEPATH"). "\\Documents\\".$_SESSION['id']."main.pas");
 
 			if(strpos($output, 'Error') !== false) {
 				var_dump($output);
@@ -132,9 +132,9 @@
 
 
 			if($no_latihan > 3) {
-
+				header('location:latihan.php');
 			} else {
-				echo "<a href='soallatihan.php?id=".$id_latihan."&L=".$no_latihan."&V=".$variasi."'><button>Next</button></a>";	
+				echo "<a href='soallatihan.php?id=".$id_latihan."&L=".$no_latihan."&V=".$variasi."'><button class='btn btn-block btn-success' style='width:70px; margin-top:30px; margin-left:700px;'>Next</button></a>";	
 			}
 
 			
@@ -145,16 +145,34 @@
 
 		$output = shell_exec(getenv("HOMEDRIVE") . getenv("HOMEPATH"). "\\Documents\\main.exe");
 
-		echo "Input : " .$input. "<br/>";
-		echo "Output : " .$output. "<br/>";
+		echo "<div style='margin-top:50px; margin-left:50px;'>
+			 		Input
+			 		<div style='height:50px; width:800px; background-color:#f5f5f5; border: 1px solid #ccc; border-radius:5px; margin-top:5px;'>
+			 			<p style='padding-top:15px; padding-left:15px;'>".$input."</p>
+			 		</div>
+			 	</div>";
+
+
+		echo "<div style='margin-top:5px; margin-left:50px;'>
+			 		<div style='float:left; height:50px; width:100px; background-color: #f5f5f5; border: 1px solid #ccc; border-radius:5px; width:380px;'>
+			 			<p style='padding-top:15px; padding-left:15px;'>".$output."</p>
+			 		</div>	
+
+			 		<div style='height:50px; width:100px; background-color: #f5f5f5; border: 1px solid #ccc; border-radius:5px; margin-left:420px; width:380px;'>
+			 			<p style='padding-top:15px; padding-left:15px;'>".$jwbBenar."</p>
+			 		</div>
+			 	</div>";
+
 		
 		if($output == "".$jwbBenar."\n" || $output == $jwbBenar) {
-			echo "benar";
-			echo "<br/>";
+			echo "<div style='margin-top:30px; margin-left:50px; height:50px; width:800px; background-color:#00a65a; border:3px solid #008d4c; border-radius:5px;'>
+			 		<p style='color:white; font-size:16px; padding-top:11px; padding-left:10px;'><i class='icon fa fa-check'></i> Output Sesuai</p>
+			 	</div>";
 			return 1;
 		} else {
-			echo "salah";
-			echo "<br/>";
+			echo "<div style='margin-top:30px; margin-left:50px; height:50px; width:800px; background-color:#f56954; border:3px solid #d73925; border-radius:5px;'>
+			 		<p style='color:white; font-size:16px; padding-top:11px; padding-left:10px;'><i class='icon fa fa-ban'></i> Output Tidak Sesuai</p>
+			 	</div>";
 			return 0;
 		}
 
